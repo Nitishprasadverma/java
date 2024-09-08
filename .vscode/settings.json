@@ -1,0 +1,10 @@
+{
+    "java.help.collectErrorLog": true,
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 30,
+    "editor.cursorStyle": "line",
+    "editor.codeActions.triggerOnFocusChange": true,
+    "extensions.ignoreRecommendations": false,
+    "extensions.experimental.deferredStartupFinishedActivation": true,
+    "extensions.closeExtensionDetailsOnViewChange": true
+}
