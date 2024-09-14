@@ -1,7 +1,7 @@
 class singleNumber{
     public static void main(String[] args){
         //appearing three times
-        int[] arr = {2,2,3,2};
+        // int[] arr = {2,2,3,2};
 
         // what if appear for times 
         int[] nums= {2,2,2,1,3,1,3,1,1,3,3,2,5};
