@@ -1,6 +1,6 @@
 public class checkAmatrixIsXMatrix {
     public static void main(String[] args) {
-        int [][] grid = {{2,0,0,1},{0,3,1,0},{0,5,2,0},{4,0,0,2}}
+        int [][] grid = {{2,0,0,1},{0,3,1,0},{0,5,2,0},{4,0,0,2}};
         System.out.println(checkXMatrix(grid));
     }
     static boolean checkXMatrix(int[][] grid) {
