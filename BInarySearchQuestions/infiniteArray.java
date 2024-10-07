@@ -1,4 +1,4 @@
-import java.util.*;
+
 public class infiniteArray {
     public static void main(String[] args) {
         int[] arr = {12,15,16,18,24,45,36,23};

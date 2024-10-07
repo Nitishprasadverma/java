@@ -1,5 +1,4 @@
-// package BInarySearchQuestions;
-import java.util.*;
+
 public class floorOfNumber {
     public static void main(String[] args) {
         int[] arr ={12,15,17,23,26,29,34,37};
