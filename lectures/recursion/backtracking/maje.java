@@ -7,8 +7,15 @@ public class maje {
         // System.out.println(count(4, 4));
         // path("", 4, 4);
 
-        ArrayList<String> ans = digonalPath("", 4, 4);
-        System.out.println(ans);
+        // ArrayList<String> ans = digonalPath("", 4, 4);
+        // System.out.println(ans);
+        boolean[][] boards = {
+        {true,true,true},
+        {true,false,true},
+        {true,true,true}
+        };
+        pathWithRestriction("", boards, 0, 0);
+
     }
 
     static int count(int r, int c) {
@@ -78,4 +85,20 @@ public class maje {
         return ans;
     }
     
+
+    static void pathWithRestriction(String p,boolean [][] maze, int r, int c) {
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+            System.out.println(p);
+            return;
+        }
+
+        if(!maze[r][c] ) return;
+        if (r < maze.length - 1) {
+            pathWithRestriction(p + 'D',maze, r + 1, c);
+        }
+           
+        if (c < maze[0].length - 1) {
+            pathWithRestriction(p + 'R',maze, r, c + 1);
+        }
+    }
 }
