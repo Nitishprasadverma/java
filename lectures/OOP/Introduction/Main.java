@@ -1,6 +1,6 @@
 package OOP.Introduction;
 
-import LinerSearch.search2dArr;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -53,6 +53,11 @@ public class Main {
         Student random1 = new Student();
         
         // System.out.println(random1.name);
+
+        Student one  = new Student();
+        Student two = one;
+        one.name = "Something-somthing";
+        System.out.println(two.name);
     }
 
 
