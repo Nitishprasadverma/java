@@ -1,4 +1,4 @@
-package lectures.recursion.String.Stringbuffer;
+package recursion.String.Stringbuffer;
 // import java.util.Random;
 import java.util.Arrays;
 import java.text.DecimalFormat;

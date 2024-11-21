@@ -1,4 +1,4 @@
-package lectures.BinarySearch.RotatedBinarySearch;
+package RotatedBinarySearch;
 
 public class Main {
     public static void main(String[] args) {
