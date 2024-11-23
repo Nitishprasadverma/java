@@ -1,4 +1,4 @@
-import java.util.List;
+
 
 public class pow{
     public static void main(String[] args) {

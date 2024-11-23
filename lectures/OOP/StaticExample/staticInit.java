@@ -15,12 +15,14 @@ public class staticInit {
 
      public static void main(String[] args) {
         staticInit obj = new staticInit();
+        System.out.println(obj);
         System.out.println(staticInit.a + " " + staticInit.b);
 
         staticInit.b += 3;
         System.out.println(staticInit.a + " " + staticInit.b);
 
         staticInit obj2 = new staticInit();
+        System.out.println(obj2);
         System.out.println(staticInit.a + " " + staticInit.b);
 
      }
