@@ -1,11 +1,11 @@
 package lectures.OOP.Properties.inheritance;
 
 public class Box {
-
+    // private int grip;
     double h;
     double w;
     double l;
-double weight;
+// double weight;
     Box() {
         this.h = -1;
         this.w = -1;
@@ -31,10 +31,13 @@ double weight;
         this.w = old.w;
     }
 
-    public BoxWeight(double l, double h, double w, double weight) {
-        // used to initialise values present in parent class
-        super(l, h, w); // what is this? call the parent class constructor
-//        System.out.println(super.weight);
-        this.weight = weight;
+    public void information(){
+        System.out.println("running the box");
     }
+//     public BoxWeight(double l, double h, double w, double weight) {
+//         // used to initialise values present in parent class
+//         super(l, h, w); // what is this? call the parent class constructor
+// //        System.out.println(super.weight);
+//         this.weight = weight;
+//     }
 }
