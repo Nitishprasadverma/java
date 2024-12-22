@@ -19,6 +19,53 @@ public class MergeTwoSrtList {
         }
     }
 
+    public boolean isPalindrome(ListNode head){
+        ListNode mid  = middleNode(head);
+        ListNode secondHead = reverseList(mid);
+        ListNode reverseHead = secondHead;
+
+        while (head != null && secondHead != null) {
+            if(head.val != secondHead.val) break;
+
+            head = head.next;
+            secondHead = secondHead.next;
+
+        }
+
+        reverseList(reverseHead);
+        return head == null || secondHead == null;
+    }
+
+
+    public ListNode middleNode(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    
+    public ListNode reverseList(ListNode head) {
+        if(head == null) return head;
+          ListNode prev = null;
+      ListNode pres = head;
+        ListNode next = pres.next;
+
+        while (pres != null) {
+            pres.next = prev;
+            prev = pres;
+            pres = next;
+            if(next != null){
+                next  = next.next;
+            }
+           
+        }
+             return prev;
+    }
+
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode dummyHead = new ListNode();
         ListNode tail = dummyHead;
