@@ -166,6 +166,41 @@ public class LL {
         return ans;
 
     }
+
+    // in case if the tail is given  to us , using resursion
+    private void reverse(Node node){
+        if(node == tail){
+            head = tail;
+            return;
+        }
+
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+    //when tail is not given to us inplace reversal
+
+    public void reverse(){
+        if(size < 2) return;
+
+        Node prev = null;
+        Node pres = head;
+        Node next = pres.next;
+
+        while (pres != null) {
+            pres.next = prev;
+            prev = pres;
+            pres = next;
+            if(next != null){
+                next  = next.next;
+            }
+           
+        }
+             head = prev;
+
+             // in case of returning node will return directly prev as it will be our head
+    }
     private class Node {
         private int value;
         private Node next;
