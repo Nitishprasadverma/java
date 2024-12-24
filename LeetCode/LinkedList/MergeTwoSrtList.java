@@ -36,7 +36,32 @@ public class MergeTwoSrtList {
         return head == null || secondHead == null;
     }
 
+    public void reorderList(ListNode head) {
 
+        if(head == null || head.next == null) return;
+        ListNode mid = middleNode(head);
+
+        ListNode hs = reverseList(mid);
+        ListNode hf = head;
+
+        while (hs!= null && hf != null) {
+            ListNode temp = hf.next;
+            hf.next = hs;
+            hf = temp;
+            
+
+            temp = hs.next;
+            hs.next = hf;
+            hs = temp;
+        }
+
+
+        if(hf!= null){
+            hf.next = null;
+        }
+
+
+    }
     public ListNode middleNode(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;

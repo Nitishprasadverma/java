@@ -23,7 +23,7 @@ public class Main {
       // System.out.println(  list.deleteLast());
       //   list.display();
 
-      //   System.out.println( list.deleteAt(1));
+        // System.out.println( list.deleteAt(1));
        
       //   list.display();
 
