@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import org.w3c.dom.Node;
+
 public class SumList {
 
     public static void main(String[] args) {
@@ -166,12 +168,12 @@ public class SumList {
 
     public ListNode oddEvenListOptimize(ListNode head) {
         if (head == null && head.next == null)
-        return head;
+            return head;
         ListNode odd = head;
         ListNode even = head.next;
         ListNode evenHead = head.next;
 
-        while (  even != null && even.next != null) {
+        while (even != null && even.next != null) {
             odd.next = odd.next.next;
             even.next = even.next.next;
             odd = odd.next.next;
@@ -182,90 +184,150 @@ public class SumList {
         return head;
     }
 
-
-    
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-       
-    //    //Brute force with extra space
-    //     HashSet<ListNode> hasset = new HashSet<>();
-    //     ListNode head1 = headA;
-    //     ListNode head2 = headB;
-    //     int i =0;
-    //     while (head1 != null) {
-    //        hasset.add(head1);
-    //        head1 = head1.next;
 
-    //     }
+        // //Brute force with extra space
+        // HashSet<ListNode> hasset = new HashSet<>();
+        // ListNode head1 = headA;
+        // ListNode head2 = headB;
+        // int i =0;
+        // while (head1 != null) {
+        // hasset.add(head1);
+        // head1 = head1.next;
 
-    //     while (head2 != null) {
-    //         if(hasset.contains(head2)) return head2;
-    //         hasset.add(head2);
-    //         head2 = head2.next;
-    //     }
-    //     return null;
+        // }
 
+        // while (head2 != null) {
+        // if(hasset.contains(head2)) return head2;
+        // hasset.add(head2);
+        // head2 = head2.next;
+        // }
+        // return null;
 
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    // ++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // while(headB != null){
+        // ListNode temp = headA;
 
+        // while (temp != null) {
+        // if(temp == headB) return temp;
 
-    // while(headB != null){
-    //     ListNode temp = headA;
+        // temp = temp.next;
+        // }
+        // headB = headB.next;
+        // }
+        // return null;
 
-    //     while (temp != null) {
-    //         if(temp  == headB) return temp;
+        // ++++++++++++++++++++++++++++++++++++++++++++
+        // Optimize
 
-    //         temp = temp.next;
-    //     }
-    //     headB = headB.next;
-    // }
-    // return null;
+        // ListNode d1 = headA;
+        // ListNode d2 = headB;
 
+        // while (d1 != d2) {
+        // d1 = d1 == null? headA:d1.next;
+        // d2 = d2 == null?headB:d2.next;
+        // }
+        // return d1;
 
-    // ++++++++++++++++++++++++++++++++++++++++++++
-//Optimize
+        // 99% beats ++++++++++++++++++++++++++++++++++++
 
-// ListNode d1 = headA;
-// ListNode d2 = headB;
-
-// while (d1 != d2) {
-//     d1 = d1 == null? headA:d1.next;
-//     d2 = d2 == null?headB:d2.next;
-// }
-// return d1;
-
-
-
-//99% beats ++++++++++++++++++++++++++++++++++++
-
-int diff = getDifference(headA,headB);
-if(diff < 0) 
-    while(diff++ != 0) headB = headB.next; 
-else while(diff-- != 0) headA = headA.next;
-while(headA != null) {
-    if(headA == headB) return headA;
-    headB = headB.next;
-    headA = headA.next;
-}
-return headA;
-    
+        int diff = getDifference(headA, headB);
+        if (diff < 0)
+            while (diff++ != 0)
+                headB = headB.next;
+        else
+            while (diff-- != 0)
+                headA = headA.next;
+        while (headA != null) {
+            if (headA == headB)
+                return headA;
+            headB = headB.next;
+            headA = headA.next;
+        }
+        return headA;
 
     }
 
+    static int getDifference(ListNode head1, ListNode head2) {
+        int len1 = 0, len2 = 0;
+        while (head1 != null || head2 != null) {
+            if (head1 != null) {
+                ++len1;
+                head1 = head1.next;
+            }
+            if (head2 != null) {
+                ++len2;
+                head2 = head2.next;
+            }
 
-    static int getDifference(ListNode head1,ListNode head2) {
-        int len1 = 0,len2 = 0;
-           while(head1 != null || head2 != null) {
-               if(head1 != null) {
-                   ++len1; head1 = head1.next;
-               }
-               if(head2 != null) {
-                   ++len2; head2 = head2.next;
-               }
-               
-           }
-           return len1-len2;//if difference is neg-> length of list2 > length of list1 else vice-versa
-   }
+        }
+        return len1 - len2;// if difference is neg-> length of list2 > length of list1 else vice-versa
+    }
+
+    public ListNode addOne(ListNode head) {
+        // code here.
+        head = reverseLinkedList(head);
+
+        ListNode temp = head;
+        int carry = 1;
+
+        while (temp != null) {
+
+            temp.val = temp.val + carry;
+
+            if (temp.val < 10) {
+                carry = 0;
+                break;
+            } else {
+                temp.val = 0;
+                carry = 1;
+            }
+            temp = temp.next;
+
+        }
+
+        if (carry == 1) {
+            ListNode newnode = new ListNode(1);
+            head = reverseLinkedList(head);
+            newnode.next = head;
+            return newnode;
+        }
+
+        head = reverseLinkedList(head);
+        return head;
+
+    }
+
+    public static ListNode reverseLinkedList(ListNode head) {
+        // Base case:
+        // If the linked list is empty or has only one node,
+        // return the head as it is already reversed.
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // Recursive step:
+        // Reverse the linked list starting
+        // from the second node (head.next).
+        ListNode newHead = reverseLinkedList(head.next);
+
+        // Save a reference to the node following
+        // the current 'head' node.
+        ListNode front = head.next;
+
+        // Make the 'front' node point to the current
+        // 'head' node in the reversed order.
+        front.next = head;
+
+        // Break the link from the current 'head' node
+        // to the 'front' node to avoid cycles.
+        head.next = null;
+
+        // Return the 'newHead,' which is the new
+        // head of the reversed linked list.
+        return newHead;
+    }
 
     public class ListNode {
         int val;
