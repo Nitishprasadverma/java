@@ -1,5 +1,9 @@
 package LinkedList;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class SumList {
 
     public static void main(String[] args) {
@@ -36,7 +40,8 @@ public class SumList {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
-        if(head == null) return null;
+        if (head == null)
+            return null;
         int cnt = 0;
         ListNode temp = head;
 
@@ -96,6 +101,171 @@ public class SumList {
         }
         return dummyNode.next;
     }
+
+    public int[] nextLargerNodes(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        ListNode temp = head;
+        while (temp != null) {
+            head = temp.next;
+            boolean isAdded = false;
+            while (head != null) {
+                if (temp.val < head.val) {
+                    list.add(head.val);
+                    isAdded = true;
+                    break;
+                }
+                head = head.next;
+            }
+            if (!isAdded) {
+                list.add(0);
+            }
+            temp = temp.next;
+        }
+
+        int[] arr = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            arr[i] = list.get(i);
+        }
+        return arr;
+
+    }
+
+    // brute force solution
+    public ListNode oddEvenList(ListNode head) {
+        if (head == null && head.next == null)
+            return head;
+        ListNode temp = head;
+        ArrayList<Integer> list = new ArrayList<>();
+        while (temp != null && temp.next != null) {
+            list.add(temp.val);
+            temp = temp.next.next;
+        }
+        if (temp != null) {
+            list.add(temp.val);
+        }
+
+        temp = head.next;
+
+        while (temp != null && temp.next != null) {
+            list.add(temp.val);
+            temp = temp.next.next;
+        }
+        if (temp != null) {
+            list.add(temp.val);
+        }
+
+        temp = head;
+        int indx = 0;
+        while (temp != null) {
+            temp.val = list.get(indx);
+            indx++;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+    public ListNode oddEvenListOptimize(ListNode head) {
+        if (head == null && head.next == null)
+        return head;
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = head.next;
+
+        while (  even != null && even.next != null) {
+            odd.next = odd.next.next;
+            even.next = even.next.next;
+            odd = odd.next.next;
+            even = even.next.next;
+        }
+
+        odd.next = evenHead;
+        return head;
+    }
+
+
+    
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+       
+    //    //Brute force with extra space
+    //     HashSet<ListNode> hasset = new HashSet<>();
+    //     ListNode head1 = headA;
+    //     ListNode head2 = headB;
+    //     int i =0;
+    //     while (head1 != null) {
+    //        hasset.add(head1);
+    //        head1 = head1.next;
+
+    //     }
+
+    //     while (head2 != null) {
+    //         if(hasset.contains(head2)) return head2;
+    //         hasset.add(head2);
+    //         head2 = head2.next;
+    //     }
+    //     return null;
+
+
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+    // while(headB != null){
+    //     ListNode temp = headA;
+
+    //     while (temp != null) {
+    //         if(temp  == headB) return temp;
+
+    //         temp = temp.next;
+    //     }
+    //     headB = headB.next;
+    // }
+    // return null;
+
+
+    // ++++++++++++++++++++++++++++++++++++++++++++
+//Optimize
+
+// ListNode d1 = headA;
+// ListNode d2 = headB;
+
+// while (d1 != d2) {
+//     d1 = d1 == null? headA:d1.next;
+//     d2 = d2 == null?headB:d2.next;
+// }
+// return d1;
+
+
+
+//99% beats ++++++++++++++++++++++++++++++++++++
+
+int diff = getDifference(headA,headB);
+if(diff < 0) 
+    while(diff++ != 0) headB = headB.next; 
+else while(diff-- != 0) headA = headA.next;
+while(headA != null) {
+    if(headA == headB) return headA;
+    headB = headB.next;
+    headA = headA.next;
+}
+return headA;
+    
+
+    }
+
+
+    static int getDifference(ListNode head1,ListNode head2) {
+        int len1 = 0,len2 = 0;
+           while(head1 != null || head2 != null) {
+               if(head1 != null) {
+                   ++len1; head1 = head1.next;
+               }
+               if(head2 != null) {
+                   ++len2; head2 = head2.next;
+               }
+               
+           }
+           return len1-len2;//if difference is neg-> length of list2 > length of list1 else vice-versa
+   }
 
     public class ListNode {
         int val;
