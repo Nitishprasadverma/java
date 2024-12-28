@@ -16,8 +16,8 @@ public class SubAr {
             if (till > nums.length) {
                 break;
             }
-            int sum = 0;
-            int comp = 0;
+            // int sum = 0;
+            // int comp = 0;
             int num1 = 0; int num2 = 0; int num3 = 0;
             for (int j = i; j <= i; j++) {
                num1 = nums[j];
