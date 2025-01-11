@@ -1,4 +1,4 @@
-package lectures.recursion.Striver;
+package recursion.Striver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -72,5 +72,18 @@ public class CombinationSum2 {
         }
         return true;
     }
+
+    // public ArrayList<String> findPath(ArrayList<ArrayList<Integer>> mat) {
+    //     // code here
+    // }
+
+    // void solve (int i, int j, ArrayList<ArrayList<Integer>>a, int n, ArrayList<String> ans, String move, int[][] vis){
+    //     if(i == n - 1 && j == n-1){
+    //         ans.add(move);
+    //     }
+    //     //downward
+
+    //     if(i + 1<n && !vis[i+1]&&a[i][j] == 1)
+    // }
 
 }
