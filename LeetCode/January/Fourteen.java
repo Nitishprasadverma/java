@@ -29,8 +29,8 @@ class Fourteen {
         return count;
     }
 
-    public int[] findThePrefixCommonArray(int[] A, int[] B) {
+    // public int[] findThePrefixCommonArray(int[] A, int[] B) {
 
-    }
+    // }
 
 }
