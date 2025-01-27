@@ -7,6 +7,8 @@ public class Lec13 {
 
     }
 
+
+    //memoization
     public int solve(int n, int m, int grid[][]) {
         // Code here
 
@@ -68,6 +70,7 @@ public class Lec13 {
         return helper(arr.length - 1, target, arr, dp);
     }
 
+    //memoziation
     static boolean helper(int i,int target, int[] arr, int[][] dp){
         if(target == 0) return true;
 
@@ -87,6 +90,7 @@ public class Lec13 {
         return notTake || take;
     }
 
+    //memoization
 
     public boolean canPartition(int[] nums) {
         int totalSum = 0;
@@ -106,5 +110,33 @@ public class Lec13 {
 
     }
 
+
+    //Tabulation - 14//
+
+    boolean isSubsetSumToK( int k, int[] arr){
+        boolean [][] dp = new boolean[arr.length][k + 1];
+        for(int i =0; i < arr.length; i++) dp[i][0] = true;
+
+        if(arr[0] <= k) return dp[0][arr[0]] = true; 
+
+        for(int ind = 1; ind < arr.length; ind++){
+            for(int target=  1; target <= k; target++){
+                boolean notTake = dp[ind - 1][target];
+
+                boolean take = true;
+
+                if(arr[ind] <= target){
+                    take = dp[ind - 1][target - arr[ind]];
+                }
+
+                dp[ind][target] = take || notTake;
+            }
+        }
+
+        return dp[arr.length - 1][k];
+    }
+
+
+    
 
 }
