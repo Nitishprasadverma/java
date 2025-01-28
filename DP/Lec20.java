@@ -38,4 +38,35 @@ public class Lec20 {
         }
         return dp[ind][capacity] =Math.max(notTake, take);
     }
+
+    public int change(int amount, int[] coins) {
+        int n = coins.length;
+       int[][] dp = new int[n][amount + 1];
+       for (int[] row : dp) {
+           Arrays.fill(row, -1);
+       }
+       return solve(n - 1, coins, amount, dp);
+
+   }
+
+    public int solve(int ind, int coins[], int amount, int[][] dp) {
+       if (ind == 0) {
+           if (amount % coins[0] == 0){
+               return 1;
+           }else{
+               return 0;
+           }
+             
+       }
+
+       if (dp[ind][amount] != -1)
+           return dp[ind][amount];
+       int notTake = 0 + solve(ind - 1, coins, amount, dp);
+       // int min = Integer.MAX_VALUE;
+       int take = 0;
+       if (coins[ind] <= amount) {
+           take =  solve(ind, coins, amount - coins[ind], dp);
+       }
+       return dp[ind][amount] = take + notTake;
+   }
 }
