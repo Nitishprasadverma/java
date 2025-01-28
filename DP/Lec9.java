@@ -23,7 +23,7 @@ public class Lec9 {
 
     public int solve(int ind, int coins[], int amount, int[][] dp) {
         if (ind == 0) {
-            if (amount % coins[ind] == 0)
+            if (amount % coins[0] == 0)
                 return amount / coins[0];
             else
                 return (int) Math.pow(10, 9);
