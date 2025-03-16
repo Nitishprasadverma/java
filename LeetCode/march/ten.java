@@ -1,5 +1,5 @@
 
-package march;
+package LeetCode.march;
 
 import java.util.Arrays;
 import java.util.HashMap;
