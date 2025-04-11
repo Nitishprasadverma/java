@@ -1,4 +1,4 @@
-package LeetCode.march;
+package march;
 
 public class thriteen {
     public static void main(String[] args) {

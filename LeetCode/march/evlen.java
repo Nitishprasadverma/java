@@ -1,7 +1,7 @@
 
 // package march;
 
-package LeetCode.march;
+package march;
 
 public class evlen {
     public static void main(String[] args) {
