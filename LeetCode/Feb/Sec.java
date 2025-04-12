@@ -1,6 +1,6 @@
 package Feb;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class Sec {
     public boolean check(int[] nums) {
