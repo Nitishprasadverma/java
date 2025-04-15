@@ -1,4 +1,4 @@
-package lectures.Trees.binaryTree;
+package Trees.binaryTree;
 
 public class symmetric {
     public static void main(String[] args) {

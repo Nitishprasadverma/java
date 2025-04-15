@@ -1,9 +1,9 @@
-package Trees;
+package Trees.Avl;
 
-public class BST {
+public class AvlTree {
     public class Node {
         private int value;
-        private int hieght;
+        private int height;
         private Node left;
         private Node right;
 
@@ -14,13 +14,14 @@ public class BST {
         public int getValue() {
             return value;
         }
-
     }
 
     private Node root;
 
-    public BST() {
+    public AvlTree() {}
 
+    public int height() {
+        return height(root);
     }
 
     public void insert(int value) {
@@ -41,9 +42,59 @@ public class BST {
             node.right = insert(value, node.right);
         }
 
-        node.hieght = Math.max(hieght(node.left), hieght(node.right)) + 1;
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+
+        return rotate(node);
+    }
+
+    private Node rotate(Node node) {
+        if (height(node.left) - height(node.right) > 1) {
+            if (height(node.left.left) - height(node.left.right) > 0) {
+                return rightRotate(node);
+            }
+            if (height(node.left.left) - height(node.left.right) < 0) {
+                node.left = leftRotate(node.left);
+                return rightRotate(node);
+            }
+        }
+
+        if (height(node.left) - height(node.right) < -1) {
+            if (height(node.right.left) - height(node.right.right) < 0) {
+                return leftRotate(node);
+            }
+            if (height(node.right.left) - height(node.right.right) > 0) {
+                node.right = rightRotate(node.right);
+                return leftRotate(node);
+            }
+        }
 
         return node;
+    }
+
+    public Node rightRotate(Node p) {
+        Node c = p.left;
+        Node t = c.right;
+
+        c.right = p;
+        p.left = t;
+
+        p.height = Math.max(height(p.left), height(p.right)) + 1;
+        c.height = Math.max(height(c.left), height(c.right)) + 1;
+
+        return c;
+    }
+
+    public Node leftRotate(Node c) {
+        Node p = c.right;
+        Node t = p.left;
+
+        p.left = c;
+        c.right = t;
+
+        p.height = Math.max(height(p.left), height(p.right)) + 1;
+        c.height = Math.max(height(c.left), height(c.right)) + 1;
+
+        return p;
     }
 
     public void populate(int[] nums) {
@@ -79,19 +130,18 @@ public class BST {
         System.out.println(details + node.value);
 
         display(node.left, "Left Child of " + node.value + " : ");
-
-        display(node.right, "Right child of" + node.value + " : ");
+        display(node.right, "Right Child of " + node.value + " : ");
     }
 
     public boolean isEmpty() {
         return root == null;
     }
 
-    public int hieght(Node node) {
+    public int height(Node node) {
         if (node == null)
             return -1;
 
-        return node.hieght;
+        return node.height;
     }
 
     public boolean balanced() {
@@ -102,12 +152,12 @@ public class BST {
         if (node == null)
             return true;
 
-        return Math.abs(hieght(node.left) - hieght(node.right)) <= 1 && balanced(node.left) && balanced(node.right);
+        return Math.abs(height(node.left) - height(node.right)) <= 1 && balanced(node.left) && balanced(node.right);
     }
 
     public static void main(String[] args) {
-        BST tree = new BST();
-        int[] nums = { 5, 2, 7, 1, 4, 6, 9, 8, 3, 10};
+        AvlTree tree = new AvlTree();
+        int[] nums = {5, 2, 7, 1, 4, 6, 9, 8, 3, 10};
 
         tree.populate(nums);
         tree.display();
