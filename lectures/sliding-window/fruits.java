@@ -16,8 +16,8 @@ public class fruits {
 
         Map<Integer, Integer> m = new HashMap<>();
 
-        while (i < n) {
-            m.put(arr[i], m.getOrDefault(arr[i], 0) + 1);
+        while (j < n) {
+            m.put(arr[j], m.getOrDefault(arr[j], 0) + 1);
 
             while (m.size() > K) {
                 m.put(arr[i], m.get(arr[i]) - 1);
@@ -42,8 +42,8 @@ public class fruits {
 
         Map<Integer, Integer> m = new HashMap<>();
 
-        while (i < n) {
-            m.put(arr[i], m.getOrDefault(arr[i], 0) + 1);
+        while (j < n) {
+            m.put(arr[j], m.getOrDefault(arr[j], 0) + 1);
 
 
             if(m.size() > K){
