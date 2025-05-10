@@ -1,4 +1,4 @@
-package lectures.OOP.InterFaces.Nested;
+package OOP.InterFaces.Nested;
 
 public class A {
     public interface NestedInterface {

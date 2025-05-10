@@ -1,4 +1,4 @@
-package lectures.greedy;
+package greedy;
 
 import java.util.Arrays;
 

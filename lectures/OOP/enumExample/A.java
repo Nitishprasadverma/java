@@ -1,4 +1,4 @@
-package lectures.OOP.enumExample;
+package OOP.enumExample;
 
 public interface A {
     void display();

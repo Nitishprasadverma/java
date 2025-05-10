@@ -1,4 +1,4 @@
-package lectures.OOP.singleton;
+package OOP.singleton;
 
 public class Main {
 //   Singleton obj = new Singleton(); //error bcz singleton is define as private calss there

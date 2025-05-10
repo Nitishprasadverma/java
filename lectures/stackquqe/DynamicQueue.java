@@ -1,4 +1,4 @@
-package lectures.stackquqe;
+package stackquqe;
 
 public class DynamicQueue extends CircularQueue{
     public DynamicQueue() {

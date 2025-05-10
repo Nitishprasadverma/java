@@ -1,4 +1,4 @@
-package lectures.OOP.InterFaces;
+package OOP.InterFaces;
 
 public class ElectricEngine implements Engine {
     @Override

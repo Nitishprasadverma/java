@@ -1,4 +1,4 @@
-package lectures.OOP.Generics;
+package OOP.Generics;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;

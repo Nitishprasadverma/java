@@ -1,4 +1,4 @@
-package lectures.OOP.Properties.inheritance;
+package OOP.Properties.inheritance;
 
 public class BoxPrice extends BoxWeight {
     double cost;

@@ -1,5 +1,5 @@
 
-package lectures.stackquqe;
+package stackquqe;
 
 import java.util.Scanner;
 

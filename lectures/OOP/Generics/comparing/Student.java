@@ -1,4 +1,4 @@
-package lectures.OOP.Generics.comparing;
+package OOP.Generics.comparing;
 
 public class Student implements Comparable<Student>{
    int rollno;

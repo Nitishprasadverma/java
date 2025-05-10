@@ -1,4 +1,4 @@
-package lectures.OOP.collection;
+package OOP.collection;
 
 // import java.util.ArrayList;
 import java.util.LinkedList;

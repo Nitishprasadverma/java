@@ -1,4 +1,4 @@
-package lectures.stackquqe;
+package stackquqe;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -1,4 +1,4 @@
-package lectures.OOP.exceptionHandling;
+package OOP.exceptionHandling;
 
 public class MyException extends Exception{
     public MyException(String message){

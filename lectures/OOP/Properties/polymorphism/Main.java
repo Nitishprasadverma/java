@@ -1,4 +1,4 @@
-package lectures.OOP.Properties.polymorphism;
+package OOP.Properties.polymorphism;
 
 public class Main {
    public static void main(String[] args) {

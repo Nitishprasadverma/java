@@ -1,4 +1,4 @@
-package lectures.OOP.StaticExample;
+package OOP.StaticExample;
 
 public class Human {
     int age;

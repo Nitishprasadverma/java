@@ -1,4 +1,4 @@
-package lectures.greedy;
+package greedy;
 import java.util.*;
 class meetingn {
     int start;

@@ -1,4 +1,4 @@
-package lectures.OOP.InterFaces.extendDemo2;
+package OOP.InterFaces.extendDemo2;
 
 public interface B {
     void greet();

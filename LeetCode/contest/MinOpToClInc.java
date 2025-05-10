@@ -1,4 +1,4 @@
-package contest;
+ package contest;
 
 public class MinOpToClInc {
     public static void main(String[] args) {

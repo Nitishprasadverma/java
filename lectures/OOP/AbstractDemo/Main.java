@@ -1,4 +1,4 @@
-package lectures.OOP.AbstractDemo;
+package OOP.AbstractDemo;
 
 public class Main {
     public static void main(String[] args) {

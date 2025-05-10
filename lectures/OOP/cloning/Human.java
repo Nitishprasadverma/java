@@ -1,4 +1,4 @@
-package lectures.OOP.cloning;
+package OOP.cloning;
 
 public class Human {
      

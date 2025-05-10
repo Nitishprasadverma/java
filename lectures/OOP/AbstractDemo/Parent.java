@@ -1,4 +1,4 @@
-package lectures.OOP.AbstractDemo;
+package OOP.AbstractDemo;
 
 public abstract class Parent {
     int age;

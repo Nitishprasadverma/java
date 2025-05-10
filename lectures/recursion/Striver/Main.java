@@ -1,4 +1,4 @@
-package lectures.recursion.Striver;
+package recursion.Striver;
 
 import java.util.*;
 

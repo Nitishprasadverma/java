@@ -1,4 +1,4 @@
-package lectures.OOP.InterFaces;
+package OOP.InterFaces;
 
 public class Main {
     public static void main(String[] args) {

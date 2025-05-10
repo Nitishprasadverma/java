@@ -1,4 +1,4 @@
-package lectures.stackquqe;
+package stackquqe;
 
 
 

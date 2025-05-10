@@ -1,4 +1,4 @@
-package lectures.linkedList;
+package linkedList;
 
 public class CLL {
 private Node head;

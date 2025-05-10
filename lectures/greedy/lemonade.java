@@ -1,4 +1,4 @@
-package lectures.greedy;
+package greedy;
 
 public class lemonade {
     public static void main(String[] args) {

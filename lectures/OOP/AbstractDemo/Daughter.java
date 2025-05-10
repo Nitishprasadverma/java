@@ -1,4 +1,4 @@
-package lectures.OOP.AbstractDemo;
+package OOP.AbstractDemo;
 
 public class Daughter extends Parent{
     

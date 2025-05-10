@@ -1,4 +1,4 @@
-package lectures.OOP.singleton;
+package OOP.singleton;
 
 public class Singleton {
     private Singleton() {

@@ -1,4 +1,4 @@
-package lectures.stackquqe;
+package stackquqe;
 
 public class CustomMain {
     public static void main(String[] args) throws StackException{
