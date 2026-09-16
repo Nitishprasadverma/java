@@ -45,4 +45,5 @@ public class Main {
         //ArithmeticException here divided  by zero
         int b = 5 /0;
     }
+    
 }
