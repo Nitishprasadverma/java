@@ -19,3 +19,13 @@ What is java collection Framework?
 ## Collection
 
     - It represnts the group of object , its an interface which provides method to work on group of object
+
+## Collection Vs Collections
+  
+    ### Collection: 
+         - it is a part of collection framework. And its an interface, which expose various method which is implemented by various collection classess like ArrayList, stack LinkedList etc.
+    ### Collections:
+     
+        - It is a utility class and provide satic methods which are used to operate on collections like sorting, swapping, searching, reverse, copy etc.
+        
+      
