@@ -3,7 +3,7 @@ package Threading.LEC1;
 public class ConsumeTask implements  Runnable{
     
     SharedResource sharedResource;
-   public  ConsumeTask(SharedResource resource){
+    ConsumeTask(SharedResource resource){
         this.sharedResource = resource;
     }
 

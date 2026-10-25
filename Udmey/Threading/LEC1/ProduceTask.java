@@ -2,7 +2,7 @@ package Threading.LEC1;
 
 public class ProduceTask implements  Runnable{
     SharedResource sharedResource;
-    public ProduceTask(SharedResource resource){
+    ProduceTask(SharedResource resource){
         this.sharedResource = resource;
     }
     @Override 
